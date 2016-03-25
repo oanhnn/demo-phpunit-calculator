@@ -4,6 +4,7 @@ Introduction
 [![Coverage Status](https://coveralls.io/repos/github/oanhnn/demo-phpunit-calculator/badge.svg?branch=master)](https://coveralls.io/github/oanhnn/demo-phpunit-calculator?branch=master)
 
 A demo project about using PHPUnit.
+
 This project implement a simple calculator by php
 
 Requirements
@@ -24,6 +25,7 @@ $ ./vendor/bin/phpunit
 License
 ---
 This project is released under the MIT License.
+
 Copyright © 2016 [Oanh Nguyen][@oanhnn].
 
 

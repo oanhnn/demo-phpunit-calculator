@@ -2,6 +2,9 @@
 
 namespace Demo\Calculator;
 
+/**
+ * Class calculator
+ */
 class Calculator
 {
     const OP_ADD = '+';
@@ -90,7 +93,7 @@ class Calculator
     public static function div($a, $b)
     {
         if (0 == $b) {
-            throw new \InvalidArgumentException('Dividing by zero');
+            throw new \InvalidArgumentException('Division by zero');
         }
 
         return $a / $b;
@@ -157,8 +160,8 @@ class Calculator
      */
     public function output()
     {
-        $format = sprintf('\%%d%s', $this->limit, is_int($this->value) ? 'd' : 'f');
-        printf($format, $this->value);
+        // TODO:
+        printf('todo');
     }
 
     /**
