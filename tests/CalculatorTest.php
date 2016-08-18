@@ -50,6 +50,26 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Call protected/private method of a class.
+     *
+     * @param object $obj    Instantiated object that we will run method on.
+     * @param string $method Method name to call
+     * @param array  $params Array of parameters to pass into method.
+     * @return mixed         Method return.
+     * @throws \InvalidArgumentException
+     */
+    protected function invokeNonPublicMethod($obj, $method, $params = [])
+    {
+        if (!is_object($obj) || !is_string($method) || method_exists($obj, $method)) {
+            throw new \InvalidArgumentException();
+        }
+        $ref = new \ReflectionMethod($obj, $method);
+        $ref->setAccessible(true);
+
+        return $ref->invokeArgs($obj, $params);
+    }
+
+    /**
      * Setting up before load this class
      */
     public static function setUpBeforeClass()
